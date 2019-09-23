@@ -20,19 +20,19 @@ class Game(object):
    if all([winList[0] in self.positionsPlayed, winList[1] in self.positionsPlayed, winList[2] in self.positionsPlayed]):
     if all([self.positionsPlayed[winList[0]]=='X',self.positionsPlayed[winList[1]]=='X',self.positionsPlayed[winList[2]]=='X']): 
      fails=[coord for coord in self.positionsPlayed if not coord in winList] # List of failed plot
-     self.finalStep(winList,'pink') # Color winning plots to pink
+     self.finalStep(winList,'red') # Color winning plots to red
      self.finalStep(fails,'purple') # Color failed plots to purple
      self.gameOver=True     
 
     if all([self.positionsPlayed[winList[0]]=='O',self.positionsPlayed[winList[1]]=='O',self.positionsPlayed[winList[2]]=='O']): 
      fails=[coord for coord in self.positionsPlayed if not coord in winList]
-     self.finalStep(winList,'pink') # Color winning plots to pink
+     self.finalStep(winList,'red') # Color winning plots to red
      self.finalStep(fails,'purple') # Color failed plots to purple
      self.gameOver=True   
 
  def analyze(self):
   if len(self.positionsPlayed)==self.fullboard:
-   self.finalStep(self.positionsPlayed,'pink')
+   self.finalStep(self.positionsPlayed,'red')
    self.gameOver=True
   self.checkForWins()
  
